@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 // CSS import
@@ -22,6 +22,10 @@ function Navbar() {
 
     const {theme, setTheme} = useContext(ThemeContext);
 
+    // useEffect(() => {
+    //     console.log("Re-rendered");
+    // });
+
     function updateTheme() {
         if(theme == 'dark') {
             setTheme('light');
@@ -35,6 +39,14 @@ function Navbar() {
     function handleAutoCompleteClick(e, movieImdbId) {
         navigator(`/movie/${movieImdbId}`);
     }
+    
+    const debouncedChangeHandler = useCallback(
+        useDebounce((e) => {
+          console.log("Debounced Input:", e.target.value);
+          setSearchTerm(e.target.value);
+        }, 500),
+        [] 
+      );
 
     return (
         <div className="navbar-wrapper">
@@ -50,9 +62,13 @@ function Navbar() {
                         console.log(e.target);
                         setIsAutoCompleteVisible(false);
                     }}
-                    onChange={useDebounce((e) => {
-                        setSearchTerm(e.target.value);
-                    })}
+                    onChange={
+                        // useDebounce((e) => {
+                        //     console.log(e.target.value);
+                        //     setSearchTerm(e.target.value);
+                        // })
+                        (e) => debouncedChangeHandler(e)
+                    }
                     placeholder="what movie you are thinking about..."
                 />
 
