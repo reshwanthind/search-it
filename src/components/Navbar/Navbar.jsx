@@ -38,7 +38,7 @@ function Navbar() {
 
     return (
         <div className="navbar-wrapper">
-            <div className="movie-base-title"><Link to="/">Movie Base</Link></div>
+            <div className="movie-base-title"><Link to="/">Search It</Link></div>
             <div className="search-bar">
                 <input
                     id="movie-search-input"
