@@ -1,12 +1,104 @@
-# React + Vite
+# 🎬 Search-It: Movie Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive web application to search and explore movies using the [OMDb API](https://www.omdbapi.com/). Built with **React**, **Vite**, and **custom hooks**, **Search-It** offers a fast, intuitive user experience with live search, detailed movie info, theme support, and responsive design.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [search-it-coral.vercel.app](https://search-it-git-master-reshwanths-projects.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔍 **Instant Movie Search**  
+  Real-time search with debounced input for smooth performance and fast results.
+
+- 🎥 **Detailed Movie Information**  
+  View posters, plots, IMDb ratings, genre, release date, and more.
+
+- 🌐 **Responsive Design**  
+  Looks great on mobile, tablet, and desktop.
+
+- 🌗 **Light & Dark Theme**  
+  Toggle themes using React Context API for a personalized experience.
+
+- 🧱 **Reusable Components**  
+  Built with modular, reusable UI components like `MovieCard`, `Navbar`, etc.
+
+- 🧠 **Custom React Hooks**  
+  Clean and efficient state management using reusable custom hooks.
+
+- 🛡️ **Error Handling**  
+  Handles API/network issues gracefully with fallback UI.
+
+- ⚡ **Blazing Fast Development**  
+  Powered by **Vite** for super-fast dev server and optimized builds.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer         | Tech                                |
+|---------------|--------------------------------------|
+| **Frontend**  | React + Vite                         |
+| **Styling**   | CSS Modules                          |
+| **State**     | React Context, Custom Hooks          |
+| **API**       | [OMDb API](https://www.omdbapi.com/) |
+| **Linting**   | ESLint                               |
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── apis/         # OMDb API integration
+├── components/   # Reusable UI components
+├── context/      # Theme context provider
+├── hooks/        # Custom React hooks
+├── pages/        # Main pages (Home, MovieDetails, Error)
+├── routes/       # App routing
+├── App.jsx       # Root component
+└── main.jsx      # App entry point
+```
+
+---
+
+## ⚡ Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/reshwanthind/search-it.git
+cd search-it
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Set Up Environment Variables
+
+- Get a free API key from [OMDb API](https://www.omdbapi.com/apikey.aspx)
+- Create a `.env` file in the project root:
+
+```env
+VITE_OMDB_API_KEY=your_api_key_here
+```
+
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+### 5. Build for Production
+
+```bash
+npm run build
+```
+
+
+---
+
+<div align="center"> <strong>🎬 Lights. Camera. Search.</strong><br/> <em>Discover the magic of cinema, one query at a time.</em> ✨🍿 </div>
