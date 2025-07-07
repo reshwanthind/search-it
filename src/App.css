@@ -3,28 +3,64 @@
     --prime-blue: #00a0d6;
     --dull-blue: #364f65;
     --dark-blue: #191e26;
-    --card-background: whitesmoke;
-    --font-color: black;
-    --font-color-inverted: white;
+    --card-background: #f7f9fa;
+    --font-color: #181a1b;
+    --font-color-inverted: #fff;
+    --light-prime-gray: #e6ecf5;
+    --border-radius: 1.2rem;
+    --shadow: 0 4px 24px 0 rgba(0,0,0,0.08);
+    --transition: 0.3s cubic-bezier(.4,0,.2,1);
+    --navbar-bg: rgba(255,255,255,0.7);
+    --navbar-blur: 12px;
+  }
+  
+  [data-theme='dark'] {
+    /* light mode */
+    --prime-blue: #00a0d6;
+    --dull-blue: #364f65;
+    --dark-blue: #191e26;
+    --card-background: #23272f;
+    --font-color: #f7f9fa;
+    --font-color-inverted: #181a1b;
     --light-prime-gray: #32373e;
+    --navbar-bg: rgba(25,30,38,0.8);
+    --navbar-blur: 16px;
   }
   
   [data-theme='light'] {
     /* light mode */
     --prime-blue: #00a0d6;
     --dull-blue: #364f65;
-    --dark-blue: #ffffff;
+    --dark-blue: #f7f9fa;
+    --card-background: #fff;
+    --font-color: #181a1b;
+    --font-color-inverted: #fff;
     --light-prime-gray: #e6ecf5;
-    --card-background: #364f65;
-    --font-color: white;
-    --font-color-inverted: black;
+    --navbar-bg: rgba(255,255,255,0.7);
+    --navbar-blur: 12px;
   }
   
   body {
     margin: 0;
     padding: 0;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: var(--dark-blue);
+    color: var(--font-color);
+    transition: background var(--transition), color var(--transition);
+    min-height: 100vh;
   }
   
   #app-wrapper {
-    background-color: var(--dark-blue);
+    background: var(--dark-blue);
+    min-height: 100vh;
+    transition: background var(--transition);
+  }
+
+  @media (max-width: 600px) {
+    body {
+      font-size: 16px;
+    }
+    #app-wrapper {
+      padding: 0 0.5rem;
+    }
   }

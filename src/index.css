@@ -1,0 +1,57 @@
+/* =====================
+   Base & Reset
+   ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* =====================
+   Links
+   ===================== */
+a {
+  color: var(--prime-blue);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover,
+a:focus {
+  color: var(--dull-blue);
+}
+
+/* =====================
+   Buttons
+   ===================== */
+button {
+  font-family: inherit;
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--prime-blue);
+  color: var(--font-color-inverted);
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+button:hover,
+button:focus {
+  background: var(--dull-blue);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.12);
+}
+
+/* =====================
+   Images
+   ===================== */
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: var(--border-radius);
+  transition: box-shadow var(--transition), filter var(--transition);
+}

@@ -17,6 +17,7 @@ function useMovieList(...args) {
             }
         } catch(error) {
             console.log("api request failed")
+            console.log(error);
         }
         
     }

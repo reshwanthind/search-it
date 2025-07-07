@@ -3,26 +3,87 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 3rem;
+    transition: gap var(--transition);
 }
 
 .movie-card {
     flex-basis: 40%;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    background: var(--card-background);
+    transition: box-shadow var(--transition), background var(--transition);
 }
 
 .movie-details {
     color: var(--font-color-inverted);
     flex-basis: 50%;
-    font-size: x-large;
+    font-size: 1.3rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background: var(--dull-blue);
+    border-radius: var(--border-radius);
+    padding: 2rem 2.5rem;
+    box-shadow: var(--shadow);
+    transition: background var(--transition), color var(--transition);
 }
 
 .genre {
-    border: 1px solid var(--dull-blue);
-    background-color: var(--dull-blue);
+    display: inline-block;
+    border: 1px solid var(--prime-blue);
+    background: linear-gradient(90deg, var(--prime-blue) 60%, var(--dull-blue) 100%);
     border-radius: 20px;
     padding: 10px 20px;
     margin-right: 1rem;
+    margin-bottom: 0.5rem;
     color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px 0 rgba(0,160,214,0.08);
+    opacity: 0;
+    animation: fadeInGenre 0.7s forwards;
+    animation-delay: 0.2s;
+    transition: background var(--transition), color var(--transition);
+    word-break: break-word;
+}
+
+@keyframes fadeInGenre {
+    to { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+    .movie-details-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+    .movie-card, .movie-details {
+        flex-basis: 100%;
+        font-size: 1.1rem;
+        padding: 1.2rem 1rem;
+    }
+    .genre {
+        padding: 7px 12px;
+        font-size: 0.95rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .movie-details div:nth-child(3) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem 0.3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .genre {
+        padding: 5px 8px;
+        font-size: 0.9rem;
+        margin-right: 0.3rem;
+        margin-bottom: 0.4rem;
+    }
+    .movie-details div:nth-child(3) {
+        gap: 0.2rem 0.2rem;
+    }
 }

@@ -2,23 +2,74 @@
     max-width: 30%;
     display: flex;
     flex-direction: column;
-    border: 1px solid white;
-    padding: 20px 0px;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
     align-items: center;
-    background-color: var(--card-background);
+    background: var(--card-background);
     text-align: center;
+    padding : 2rem 0;
     margin-bottom: 3rem;
     color: var(--font-color);
+    box-shadow: var(--shadow);
+    transition: box-shadow var(--transition), background var(--transition), color var(--transition), transform var(--transition);
+    cursor: pointer;
+    overflow: hidden;
+    border: none;
 }
-
+.movie-wrapper:hover, .movie-wrapper:focus {
+    box-shadow: 0 8px 32px 0 rgba(0,160,214,0.12);
+    transform: translateY(-6px) scale(1.03);
+}
+.movie-wrapper img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
+    opacity: 0;
+    animation: fadeInImg 0.8s forwards;
+}
+@keyframes fadeInImg {
+    to { opacity: 1; }
+}
 .movie-title {
     margin-top: 2rem;
-    font-size: x-large;
-    letter-spacing: 5px;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: var(--prime-blue);
+    transition: color var(--transition);
 }
-
-.movie-year , .movie-type {
+.movie-year, .movie-type {
     margin-top: 1rem;
-    font-size: larger;
+    font-size: 1.1rem;
+    color: var(--dull-blue);
+    transition: color var(--transition);
+}
+@media (max-width: 600px) {
+    .movie-wrapper {
+        max-width: 100%;
+        padding: 8px 0px;
+        font-size: 0.95rem;
+    }
+    .movie-title {
+        font-size: 1.1rem;
+    }
+    .movie-wrapper img {
+        width: 90vw;
+        max-width: 250px;
+    }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+    .movie-wrapper {
+        max-width: 70%;
+        padding: 12px 0px;
+        font-size: 1.05rem;
+    }
+    .movie-title {
+        font-size: 1.3rem;
+    }
+    .movie-wrapper img {
+        width: 60vw;
+        max-width: 300px;
+    }
 }
